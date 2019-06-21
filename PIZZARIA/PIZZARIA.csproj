@@ -64,6 +64,12 @@
     <Compile Include="VIEW\frmEstado.Designer.cs">
       <DependentUpon>frmEstado.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +81,9 @@
     </Compile>
     <EmbeddedResource Include="VIEW\frmEstado.resx">
       <DependentUpon>frmEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

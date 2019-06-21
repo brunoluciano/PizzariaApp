@@ -16,7 +16,7 @@ namespace PIZZARIA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VIEW.frmEstado());
+            Application.Run(new VIEW.frmMenu());
         }
     }
 }
