@@ -28,5 +28,12 @@ namespace PIZZARIA.VIEW
             frmEst.MdiParent = this;
             frmEst.Show();
         }
+
+        private void CidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCidade frmCid = new frmCidade();
+            frmCid.MdiParent = this;
+            frmCid.Show();
+        }
     }
 }

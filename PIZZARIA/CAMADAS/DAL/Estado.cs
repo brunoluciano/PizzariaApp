@@ -42,5 +42,32 @@ namespace PIZZARIA.CAMADAS.DAL
 
             return lstEstado;
         }
+
+        public List<MODEL.Estado> SelectCres()
+        {
+            List<MODEL.Estado> lstEstado = new List<MODEL.Estado>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT * FROM Estado ORDER BY nome_est ASC";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Estado estado = new MODEL.Estado();
+                    estado.id = Convert.ToInt32(dados["idEstado"].ToString());
+                    estado.uf = dados["UF"].ToString();
+                    estado.nome = dados["nome_est"].ToString();
+                    lstEstado.Add(estado);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Falha na consulta da classe Estado!");
+            }
+
+            return lstEstado;
+        }
     }
 }

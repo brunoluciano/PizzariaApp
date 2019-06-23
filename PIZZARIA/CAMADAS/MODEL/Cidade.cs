@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace PIZZARIA.CAMADAS.MODEL
 {
-    class Cidade
+    public class Cidade
     {
         public int id { get; set; }
         public string nome { get; set; }
         public int idEstado { get; set; }
+        public virtual string uf { get; set; }
     }
 }
