@@ -67,5 +67,23 @@ namespace PIZZARIA.VIEW
 
             txtCidade.Text = "";
         }
+
+        private void BtnRemover_Click(object sender, EventArgs e)
+        {
+            if(lblId.Text != "")
+            {
+                int id = Convert.ToInt32(lblId.Text);
+                CAMADAS.DAL.Cidade dalCid = new CAMADAS.DAL.Cidade();
+                dalCid.Delete(id);
+
+                dgvCidade.DataSource = "";
+                dgvCidade.DataSource = dalCid.Select();
+
+                lblId.Text = "";
+                txtCidade.Text = "";
+
+            }
+            else MessageBox.Show("Não há registros a remover!");
+        }
     }
 }

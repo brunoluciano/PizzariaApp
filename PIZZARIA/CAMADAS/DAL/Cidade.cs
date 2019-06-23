@@ -85,6 +85,27 @@ namespace PIZZARIA.CAMADAS.DAL
             {
                 conexao.Close();
             }
+        }  
+
+        public void Delete(int id)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "DELETE FROM Cidade WHERE idCidade=@idCidade";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@idCidade", id);
+            try
+            {
+                conexao.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao excluir o registro solicitado!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
         }
     }
 }

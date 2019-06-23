@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.dgvCidade = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblUf = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.cmbUf = new System.Windows.Forms.ComboBox();
             this.btnInserir = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
+            this.btnRemover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCidade)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +58,35 @@
             this.dgvCidade.Size = new System.Drawing.Size(548, 132);
             this.dgvCidade.TabIndex = 0;
             this.dgvCidade.DoubleClick += new System.EventHandler(this.DgvCidade_DoubleClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Width = 50;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "CIDADE";
+            this.nome.Name = "nome";
+            this.nome.Width = 200;
+            // 
+            // uf
+            // 
+            this.uf.DataPropertyName = "uf";
+            this.uf.HeaderText = "UF";
+            this.uf.Name = "uf";
+            this.uf.Width = 50;
+            // 
+            // idEstado
+            // 
+            this.idEstado.DataPropertyName = "idEstado";
+            this.idEstado.HeaderText = "idEstado";
+            this.idEstado.Name = "idEstado";
+            this.idEstado.Visible = false;
+            this.idEstado.Width = 5;
             // 
             // lblCidade
             // 
@@ -101,35 +131,6 @@
             this.btnInserir.UseVisualStyleBackColor = true;
             this.btnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.Width = 50;
-            // 
-            // nome
-            // 
-            this.nome.DataPropertyName = "nome";
-            this.nome.HeaderText = "CIDADE";
-            this.nome.Name = "nome";
-            this.nome.Width = 200;
-            // 
-            // uf
-            // 
-            this.uf.DataPropertyName = "uf";
-            this.uf.HeaderText = "UF";
-            this.uf.Name = "uf";
-            this.uf.Width = 50;
-            // 
-            // idEstado
-            // 
-            this.idEstado.DataPropertyName = "idEstado";
-            this.idEstado.HeaderText = "idEstado";
-            this.idEstado.Name = "idEstado";
-            this.idEstado.Visible = false;
-            this.idEstado.Width = 5;
-            // 
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(253, 218);
@@ -156,11 +157,22 @@
             this.lblCodigo.TabIndex = 8;
             this.lblCodigo.Text = "ID";
             // 
+            // btnRemover
+            // 
+            this.btnRemover.Location = new System.Drawing.Point(355, 218);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(75, 23);
+            this.btnRemover.TabIndex = 9;
+            this.btnRemover.Text = "&Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.BtnRemover_Click);
+            // 
             // frmCidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnEditar);
@@ -194,5 +206,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Button btnRemover;
     }
 }
