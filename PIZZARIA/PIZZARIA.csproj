@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAMADAS\DAL\Cidade.cs" />
+    <Compile Include="CAMADAS\DAL\Cliente.cs" />
     <Compile Include="CAMADAS\DAL\Conexao.cs" />
     <Compile Include="CAMADAS\DAL\Estado.cs" />
     <Compile Include="CAMADAS\MODEL\Cidade.cs" />
@@ -65,6 +66,12 @@
     </Compile>
     <Compile Include="VIEW\frmCidade.Designer.cs">
       <DependentUpon>frmCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\frmEstado.cs">
       <SubType>Form</SubType>
@@ -89,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="VIEW\frmCidade.resx">
       <DependentUpon>frmCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\frmEstado.resx">
       <DependentUpon>frmEstado.cs</DependentUpon>

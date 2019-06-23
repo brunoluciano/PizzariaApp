@@ -30,10 +30,11 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,12 +55,20 @@
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clienteToolStripMenuItem,
             this.cidadeToolStripMenuItem,
             this.estadoToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Font = new System.Drawing.Font("Tw Cen MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(110, 28);
             this.cadastrarToolStripMenuItem.Text = "&Cadastrar";
+            // 
+            // cidadeToolStripMenuItem
+            // 
+            this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.cidadeToolStripMenuItem.Text = "C&idade";
+            this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.CidadeToolStripMenuItem_Click);
             // 
             // estadoToolStripMenuItem
             // 
@@ -81,12 +90,12 @@
             this.sairToolStripMenuItem.Text = "&Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
             // 
-            // cidadeToolStripMenuItem
+            // clienteToolStripMenuItem
             // 
-            this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
-            this.cidadeToolStripMenuItem.Text = "&Cidade";
-            this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.CidadeToolStripMenuItem_Click);
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.clienteToolStripMenuItem.Text = "&Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.ClienteToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -118,5 +127,6 @@
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem movimentaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
     }
 }

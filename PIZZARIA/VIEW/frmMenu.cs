@@ -35,5 +35,12 @@ namespace PIZZARIA.VIEW
             frmCid.MdiParent = this;
             frmCid.Show();
         }
+
+        private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCliente frmCli = new frmCliente();
+            frmCli.MdiParent = this;
+            frmCli.Show();
+        }
     }
 }

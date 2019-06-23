@@ -28,6 +28,14 @@ namespace PIZZARIA.VIEW
             cmbUf.DisplayMember = "uf";
             cmbUf.ValueMember = "id";
             cmbUf.DataSource = lstEst.SelectCres();
+
+            limparCampos();
+        }
+
+        private void limparCampos()
+        {
+            txtCidade.Text = "";
+            cmbUf.Text = "";
         }
 
         private void BtnInserir_Click(object sender, EventArgs e)
@@ -42,7 +50,7 @@ namespace PIZZARIA.VIEW
             dgvCidade.DataSource = "";
             dgvCidade.DataSource = dalCid.Select();
 
-            txtCidade.Text = "";
+            limparCampos();
         }
 
         private void DgvCidade_DoubleClick(object sender, EventArgs e)
@@ -65,7 +73,7 @@ namespace PIZZARIA.VIEW
             dgvCidade.DataSource = "";
             dgvCidade.DataSource = dalCid.Select();
 
-            txtCidade.Text = "";
+            limparCampos();
         }
 
         private void BtnRemover_Click(object sender, EventArgs e)
@@ -79,9 +87,7 @@ namespace PIZZARIA.VIEW
                 dgvCidade.DataSource = "";
                 dgvCidade.DataSource = dalCid.Select();
 
-                lblId.Text = "";
-                txtCidade.Text = "";
-
+                limparCampos();
             }
             else MessageBox.Show("Não há registros a remover!");
         }

@@ -40,6 +40,34 @@ namespace PIZZARIA.CAMADAS.DAL
             return lstCidade;
         }
 
+        public List<MODEL.Cidade> SelectCres()
+        {
+            List<MODEL.Cidade> lstCidade = new List<MODEL.Cidade>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT Cidade.idCidade, Cidade.nome_cid, Cidade.idEstado, Estado.UF FROM Cidade, Estado WHERE Cidade.idEstado = Estado.idEstado ORDER BY nome_cid ASC";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Cidade cidade = new MODEL.Cidade();
+                    cidade.id = Convert.ToInt32(dados["idCidade"].ToString());
+                    cidade.nome = dados["nome_cid"].ToString();
+                    cidade.idEstado = Convert.ToInt32(dados["idEstado"].ToString());
+                    cidade.uf = dados["UF"].ToString();
+                    lstCidade.Add(cidade);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Falha na consulta da classe Cidade!");
+            }
+
+            return lstCidade;
+        }
+
         public void Insert(MODEL.Cidade cidade)
         {
             SqlConnection conexao = new SqlConnection(strCon);
@@ -78,7 +106,7 @@ namespace PIZZARIA.CAMADAS.DAL
             }
             catch
             {
-                Console.WriteLine("Erro ao inserir registro na tabela Cidade!");
+                Console.WriteLine("Erro ao atualizar registro na tabela Cidade!");
 
             }
             finally
