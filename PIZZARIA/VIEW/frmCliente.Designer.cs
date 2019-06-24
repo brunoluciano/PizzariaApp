@@ -29,7 +29,21 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dt_nasc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome_cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
@@ -55,19 +69,6 @@
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dt_nasc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +103,95 @@
             this.dgvClientes.Size = new System.Drawing.Size(905, 185);
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.DoubleClick += new System.EventHandler(this.DgvClientes_DoubleClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Width = 40;
+            // 
+            // CPF
+            // 
+            this.CPF.DataPropertyName = "cpf";
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            this.CPF.Width = 120;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Cliente";
+            this.nome.Name = "nome";
+            this.nome.Width = 225;
+            // 
+            // telefone
+            // 
+            this.telefone.DataPropertyName = "telefone";
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            this.telefone.Width = 105;
+            // 
+            // dt_nasc
+            // 
+            this.dt_nasc.DataPropertyName = "dt_nasc";
+            this.dt_nasc.HeaderText = "Data de Nascimento";
+            this.dt_nasc.Name = "dt_nasc";
+            // 
+            // endereco
+            // 
+            this.endereco.DataPropertyName = "endereco";
+            this.endereco.HeaderText = "Endereço";
+            this.endereco.Name = "endereco";
+            this.endereco.Width = 225;
+            // 
+            // numero
+            // 
+            this.numero.DataPropertyName = "numero";
+            this.numero.HeaderText = "Número";
+            this.numero.Name = "numero";
+            this.numero.Width = 60;
+            // 
+            // complemento
+            // 
+            this.complemento.DataPropertyName = "complemento";
+            this.complemento.HeaderText = "Complemento";
+            this.complemento.Name = "complemento";
+            // 
+            // bairro
+            // 
+            this.bairro.DataPropertyName = "bairro";
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            this.bairro.Width = 120;
+            // 
+            // cep
+            // 
+            this.cep.DataPropertyName = "cep";
+            this.cep.HeaderText = "CEP";
+            this.cep.Name = "cep";
+            this.cep.Width = 90;
+            // 
+            // idCidade
+            // 
+            this.idCidade.DataPropertyName = "idCidade";
+            this.idCidade.HeaderText = "idCidade";
+            this.idCidade.Name = "idCidade";
+            this.idCidade.Visible = false;
+            this.idCidade.Width = 25;
+            // 
+            // nome_cid
+            // 
+            this.nome_cid.DataPropertyName = "cidade";
+            this.nome_cid.HeaderText = "Cidade";
+            this.nome_cid.Name = "nome_cid";
+            // 
+            // uf
+            // 
+            this.uf.DataPropertyName = "uf";
+            this.uf.HeaderText = "UF";
+            this.uf.Name = "uf";
+            this.uf.Width = 30;
             // 
             // lblCodigo
             // 
@@ -311,95 +401,6 @@
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.BtnRemover_Click);
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.Width = 40;
-            // 
-            // CPF
-            // 
-            this.CPF.DataPropertyName = "cpf";
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            this.CPF.Width = 120;
-            // 
-            // nome
-            // 
-            this.nome.DataPropertyName = "nome";
-            this.nome.HeaderText = "Cliente";
-            this.nome.Name = "nome";
-            this.nome.Width = 225;
-            // 
-            // telefone
-            // 
-            this.telefone.DataPropertyName = "telefone";
-            this.telefone.HeaderText = "Telefone";
-            this.telefone.Name = "telefone";
-            this.telefone.Width = 105;
-            // 
-            // dt_nasc
-            // 
-            this.dt_nasc.DataPropertyName = "dt_nasc";
-            this.dt_nasc.HeaderText = "Data de Nascimento";
-            this.dt_nasc.Name = "dt_nasc";
-            // 
-            // endereco
-            // 
-            this.endereco.DataPropertyName = "endereco";
-            this.endereco.HeaderText = "Endereço";
-            this.endereco.Name = "endereco";
-            this.endereco.Width = 225;
-            // 
-            // numero
-            // 
-            this.numero.DataPropertyName = "numero";
-            this.numero.HeaderText = "Número";
-            this.numero.Name = "numero";
-            this.numero.Width = 60;
-            // 
-            // complemento
-            // 
-            this.complemento.DataPropertyName = "complemento";
-            this.complemento.HeaderText = "Complemento";
-            this.complemento.Name = "complemento";
-            // 
-            // bairro
-            // 
-            this.bairro.DataPropertyName = "bairro";
-            this.bairro.HeaderText = "Bairro";
-            this.bairro.Name = "bairro";
-            this.bairro.Width = 120;
-            // 
-            // cep
-            // 
-            this.cep.DataPropertyName = "cep";
-            this.cep.HeaderText = "CEP";
-            this.cep.Name = "cep";
-            this.cep.Width = 90;
-            // 
-            // idCidade
-            // 
-            this.idCidade.DataPropertyName = "idCidade";
-            this.idCidade.HeaderText = "idCidade";
-            this.idCidade.Name = "idCidade";
-            this.idCidade.Visible = false;
-            this.idCidade.Width = 25;
-            // 
-            // nome_cid
-            // 
-            this.nome_cid.DataPropertyName = "cidade";
-            this.nome_cid.HeaderText = "Cidade";
-            this.nome_cid.Name = "nome_cid";
-            // 
-            // uf
-            // 
-            this.uf.DataPropertyName = "uf";
-            this.uf.HeaderText = "UF";
-            this.uf.Name = "uf";
-            this.uf.Width = 30;
-            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +432,7 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.dgvClientes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCliente";
             this.Text = "frmCliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);

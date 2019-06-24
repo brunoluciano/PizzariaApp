@@ -42,5 +42,19 @@ namespace PIZZARIA.VIEW
             frmCli.MdiParent = this;
             frmCli.Show();
         }
+
+        private void ClassificaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClassificacao frmClass = new frmClassificacao();
+            frmClass.MdiParent = this;
+            frmClass.Show();
+        }
+
+        private void ProdutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProduto frmProd = new frmProduto();
+            frmProd.MdiParent = this;
+            frmProd.Show();
+        }
     }
 }

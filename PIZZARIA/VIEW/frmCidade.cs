@@ -20,7 +20,8 @@ namespace PIZZARIA.VIEW
         private void FrmCidade_Load(object sender, EventArgs e)
         {
             CAMADAS.DAL.Cidade lstCidade = new CAMADAS.DAL.Cidade();
-            dgvCidade.DataSource = "";
+            //dgvCidade.DataSource = "";
+            dgvCidade.Refresh();
             dgvCidade.DataSource = lstCidade.Select();
 
             //Carregando Combo Box
@@ -47,7 +48,8 @@ namespace PIZZARIA.VIEW
             CAMADAS.DAL.Cidade dalCid = new CAMADAS.DAL.Cidade();
             dalCid.Insert(cidade);
 
-            dgvCidade.DataSource = "";
+            //dgvCidade.DataSource = "";
+            dgvCidade.Refresh();
             dgvCidade.DataSource = dalCid.Select();
 
             limparCampos();
@@ -70,7 +72,8 @@ namespace PIZZARIA.VIEW
             CAMADAS.DAL.Cidade dalCid = new CAMADAS.DAL.Cidade();
             dalCid.Update(cidade);
 
-            dgvCidade.DataSource = "";
+            //dgvCidade.DataSource = "";
+            dgvCidade.Refresh();
             dgvCidade.DataSource = dalCid.Select();
 
             limparCampos();
@@ -84,7 +87,8 @@ namespace PIZZARIA.VIEW
                 CAMADAS.DAL.Cidade dalCid = new CAMADAS.DAL.Cidade();
                 dalCid.Delete(id);
 
-                dgvCidade.DataSource = "";
+                //dgvCidade.DataSource = "";
+                dgvCidade.Refresh();
                 dgvCidade.DataSource = dalCid.Select();
 
                 limparCampos();
