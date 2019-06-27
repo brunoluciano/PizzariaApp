@@ -22,7 +22,7 @@ namespace PIZZARIA.CAMADAS.DAL
             {
                 conexao.Open();
                 SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                while(dados.Read())
+                while (dados.Read())
                 {
                     MODEL.Produto prod = new MODEL.Produto();
                     prod.id = Convert.ToInt32(dados["idProduto"].ToString());
@@ -41,5 +41,72 @@ namespace PIZZARIA.CAMADAS.DAL
             return lstProd;
         }
 
+        public void Insert(MODEL.Produto prod)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "INSERT INTO Produto VALUES (@preco, @descricao, @Classificacao_idClassificacao)";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@preco", prod.preco);
+            cmd.Parameters.AddWithValue("@descricao", prod.descricao);
+            cmd.Parameters.AddWithValue("@Classificacao_idClassificacao", prod.idClassificacao);
+            try
+            {
+                conexao.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao inserir registro na tabela Produto!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public void Update(MODEL.Produto prod)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "UPDATE Produto SET descricao=@descricao, preco=@preco, Classificacao_idClassificacao=@Classificacao_idClassificacao WHERE idProduto=@idProduto";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@idProduto", prod.id);
+            cmd.Parameters.AddWithValue("@descricao", prod.descricao);
+            cmd.Parameters.AddWithValue("@preco", prod.preco);
+            cmd.Parameters.AddWithValue("@Classificacao_idClassificacao", prod.idClassificacao);
+            try
+            {
+                conexao.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao atualizar regristro na tabela Produto");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public void Delete(int id)
+        {
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "DELETE FROM Produto WHERE idProduto=@idProduto";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@idProduto", id);
+            try
+            {
+                conexao.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao remover registro solicitado!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

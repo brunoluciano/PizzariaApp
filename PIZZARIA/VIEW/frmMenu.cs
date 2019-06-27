@@ -43,13 +43,6 @@ namespace PIZZARIA.VIEW
             frmCli.Show();
         }
 
-        private void ClassificaçãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmClassificacao frmClass = new frmClassificacao();
-            frmClass.MdiParent = this;
-            frmClass.Show();
-        }
-
         private void ProdutoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmProduto frmProd = new frmProduto();
@@ -57,11 +50,11 @@ namespace PIZZARIA.VIEW
             frmProd.Show();
         }
 
-        private void MesaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ClassificaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMesa frmMes = new frmMesa();
-            frmMes.MdiParent = this;
-            frmMes.Show();
+            frmClassificacao frmClass = new frmClassificacao();
+            frmClass.MdiParent = this;
+            frmClass.Show();
         }
     }
 }

@@ -95,15 +95,16 @@
             // 
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Location = new System.Drawing.Point(30, 229);
-            this.dgvProdutos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvProdutos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.Size = new System.Drawing.Size(928, 219);
             this.dgvProdutos.TabIndex = 5;
+            this.dgvProdutos.DoubleClick += new System.EventHandler(this.DgvProdutos_DoubleClick);
             // 
             // txtDescricao
             // 
             this.txtDescricao.Location = new System.Drawing.Point(181, 123);
-            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(132, 25);
             this.txtDescricao.TabIndex = 6;
@@ -111,7 +112,7 @@
             // txtPreco
             // 
             this.txtPreco.Location = new System.Drawing.Point(393, 116);
-            this.txtPreco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPreco.Margin = new System.Windows.Forms.Padding(4);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(132, 25);
             this.txtPreco.TabIndex = 7;
@@ -120,7 +121,7 @@
             // 
             this.cmbClass.FormattingEnabled = true;
             this.cmbClass.Location = new System.Drawing.Point(608, 116);
-            this.cmbClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbClass.Margin = new System.Windows.Forms.Padding(4);
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(160, 27);
             this.cmbClass.TabIndex = 8;
@@ -133,6 +134,7 @@
             this.btnInserir.TabIndex = 9;
             this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
             // 
             // btnEditar
             // 
@@ -142,6 +144,7 @@
             this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "&Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnRemover
             // 
@@ -151,6 +154,7 @@
             this.btnRemover.TabIndex = 11;
             this.btnRemover.Text = "&Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.BtnRemover_Click);
             // 
             // frmProduto
             // 
@@ -170,7 +174,7 @@
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblCodigo);
             this.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmProduto";
             this.Text = "frmProduto";
             this.Load += new System.EventHandler(this.FrmProduto_Load);
