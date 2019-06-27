@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PIZZARIA.CAMADAS.MODEL
 {
-    class Mesa
+    public class Mesa
     {
         public int id { get; set; }
         public bool status { get; set; }

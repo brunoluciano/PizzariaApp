@@ -39,6 +39,7 @@
             this.classificaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,6 +116,8 @@
             // 
             // movimentaçãoToolStripMenuItem
             // 
+            this.movimentaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mesaToolStripMenuItem});
             this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
             this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(146, 28);
             this.movimentaçãoToolStripMenuItem.Text = "&Movimentação";
@@ -125,6 +128,13 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(57, 28);
             this.sairToolStripMenuItem.Text = "&Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
+            // 
+            // mesaToolStripMenuItem
+            // 
+            this.mesaToolStripMenuItem.Name = "mesaToolStripMenuItem";
+            this.mesaToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.mesaToolStripMenuItem.Text = "&Mesa";
+            this.mesaToolStripMenuItem.Click += new System.EventHandler(this.MesaToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -165,5 +175,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem classificaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mesaToolStripMenuItem;
     }
 }
