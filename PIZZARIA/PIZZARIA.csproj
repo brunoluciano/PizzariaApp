@@ -52,6 +52,7 @@
     <Compile Include="CAMADAS\DAL\Conexao.cs" />
     <Compile Include="CAMADAS\DAL\Estado.cs" />
     <Compile Include="CAMADAS\DAL\Mesa.cs" />
+    <Compile Include="CAMADAS\DAL\Pedido.cs" />
     <Compile Include="CAMADAS\DAL\Produto.cs" />
     <Compile Include="CAMADAS\MODEL\Atendimento.cs" />
     <Compile Include="CAMADAS\MODEL\Cidade.cs" />
@@ -110,6 +111,12 @@
     <Compile Include="VIEW\frmMesa.Designer.cs">
       <DependentUpon>frmMesa.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\frmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\frmPedido.Designer.cs">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\frmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\frmMesa.resx">
       <DependentUpon>frmMesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\frmPedido.resx">
+      <DependentUpon>frmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\frmProduto.resx">
       <DependentUpon>frmProduto.cs</DependentUpon>

@@ -28,7 +28,7 @@ namespace PIZZARIA.CAMADAS.DAL
                     MODEL.Mesa mesa = new MODEL.Mesa();
                     mesa.id = Convert.ToInt32(dados["idMesa"].ToString());
                     mesa.status = Convert.ToBoolean(dados["status"].ToString());
-                    mesa.descricao = dados["descricao"].ToString();
+                    mesa.descricao = dados["qtdLugares"].ToString();
                     lstMesa.Add(mesa);
                 }
             }

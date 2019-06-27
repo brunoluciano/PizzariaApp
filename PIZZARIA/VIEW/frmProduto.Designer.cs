@@ -40,6 +40,11 @@
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classificao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idClassificacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +99,12 @@
             // dgvProdutos
             // 
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.descricao,
+            this.classificao,
+            this.preco,
+            this.idClassificacao});
             this.dgvProdutos.Location = new System.Drawing.Point(30, 229);
             this.dgvProdutos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProdutos.Name = "dgvProdutos";
@@ -156,6 +167,41 @@
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.BtnRemover_Click);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Width = 50;
+            // 
+            // descricao
+            // 
+            this.descricao.DataPropertyName = "descricao";
+            this.descricao.HeaderText = "DESCRIÇÃO";
+            this.descricao.Name = "descricao";
+            this.descricao.Width = 250;
+            // 
+            // classificao
+            // 
+            this.classificao.DataPropertyName = "classificacao";
+            this.classificao.HeaderText = "CLASSIFICAÇÃO";
+            this.classificao.Name = "classificao";
+            this.classificao.Width = 150;
+            // 
+            // preco
+            // 
+            this.preco.DataPropertyName = "preco";
+            this.preco.HeaderText = "PREÇO";
+            this.preco.Name = "preco";
+            // 
+            // idClassificacao
+            // 
+            this.idClassificacao.DataPropertyName = "idClassificacao";
+            this.idClassificacao.HeaderText = "idClassificacao";
+            this.idClassificacao.Name = "idClassificacao";
+            this.idClassificacao.Visible = false;
+            this.idClassificacao.Width = 50;
+            // 
             // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -198,5 +244,10 @@
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classificao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClassificacao;
     }
 }
