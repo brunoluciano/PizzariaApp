@@ -36,9 +36,9 @@
             this.estadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.classificaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.classificaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,13 +106,6 @@
             this.produtoToolStripMenuItem.Text = "&Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.ProdutoToolStripMenuItem_Click);
             // 
-            // classificaçãoToolStripMenuItem
-            // 
-            this.classificaçãoToolStripMenuItem.Name = "classificaçãoToolStripMenuItem";
-            this.classificaçãoToolStripMenuItem.Size = new System.Drawing.Size(192, 28);
-            this.classificaçãoToolStripMenuItem.Text = "C&lassificação";
-            this.classificaçãoToolStripMenuItem.Click += new System.EventHandler(this.ClassificaçãoToolStripMenuItem_Click);
-            // 
             // movimentaçãoToolStripMenuItem
             // 
             this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
@@ -125,6 +118,13 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(57, 28);
             this.sairToolStripMenuItem.Text = "&Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
+            // 
+            // classificaçãoToolStripMenuItem
+            // 
+            this.classificaçãoToolStripMenuItem.Name = "classificaçãoToolStripMenuItem";
+            this.classificaçãoToolStripMenuItem.Size = new System.Drawing.Size(192, 28);
+            this.classificaçãoToolStripMenuItem.Text = "C&lassificação";
+            this.classificaçãoToolStripMenuItem.Click += new System.EventHandler(this.ClassificaçãoToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
