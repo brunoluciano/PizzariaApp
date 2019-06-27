@@ -56,5 +56,12 @@ namespace PIZZARIA.VIEW
             frmClass.MdiParent = this;
             frmClass.Show();
         }
+
+        private void MesaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMesa frmMes = new frmMesa();
+            frmMes.MdiParent = this;
+            frmMes.Show();
+        }
     }
 }

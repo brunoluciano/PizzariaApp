@@ -37,7 +37,7 @@
             this.dgvMesa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMesa.Location = new System.Drawing.Point(88, 174);
             this.dgvMesa.Name = "dgvMesa";
-            this.dgvMesa.Size = new System.Drawing.Size(240, 150);
+            this.dgvMesa.Size = new System.Drawing.Size(444, 150);
             this.dgvMesa.TabIndex = 0;
             // 
             // frmMesa
