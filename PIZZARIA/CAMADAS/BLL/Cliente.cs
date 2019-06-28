@@ -13,5 +13,11 @@ namespace PIZZARIA.CAMADAS.BLL
             DAL.Cliente dalCli = new DAL.Cliente();
             return dalCli.Select();
         }
+
+        public List<MODEL.Cliente> SelectCres()
+        {
+            DAL.Cliente dalCli = new DAL.Cliente();
+            return dalCli.SelectCres();
+        }
     }
 }

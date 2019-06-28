@@ -48,6 +48,42 @@ namespace PIZZARIA.CAMADAS.DAL
             return lstCli;
         }
 
+        public List<MODEL.Cliente> SelectCres()
+        {
+            List<MODEL.Cliente> lstCli = new List<MODEL.Cliente>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT idCliente, CPF, nome_cli, telefone, dt_nascimento, endereco, numero, complemento, bairro, CEP, idCidade, nome_cid, UF FROM Cliente INNER JOIN Cidade ON Cidade.idCidade = Cidade_idCidade INNER JOIN Estado ON Cidade.idEstado = Estado.idEstado ORDER BY nome_cli ASC";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dados.Read())
+                {
+                    MODEL.Cliente cliente = new MODEL.Cliente();
+                    cliente.id = Convert.ToInt32(dados["idCliente"].ToString());
+                    cliente.cpf = dados["CPF"].ToString();
+                    cliente.nome = dados["nome_cli"].ToString();
+                    cliente.telefone = dados["telefone"].ToString();
+                    cliente.dt_nasc = Convert.ToDateTime(dados["dt_nascimento"].ToString());
+                    cliente.endereco = dados["endereco"].ToString();
+                    cliente.numero = Convert.ToInt32(dados["numero"].ToString());
+                    cliente.complemento = dados["complemento"].ToString();
+                    cliente.bairro = dados["bairro"].ToString();
+                    cliente.cep = Convert.ToInt32(dados["CEP"].ToString());
+                    cliente.idCidade = Convert.ToInt32(dados["idCidade"].ToString());
+                    cliente.cidade = dados["nome_cid"].ToString();
+                    cliente.uf = dados["UF"].ToString();
+                    lstCli.Add(cliente);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao listar dados da Classe Cliente!");
+            }
+            return lstCli;
+        }
+
         public List<MODEL.Cliente> SelectByNome(string nome)
         {
             List<MODEL.Cliente> lstCli = new List<MODEL.Cliente>();
