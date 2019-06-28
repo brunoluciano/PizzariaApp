@@ -38,10 +38,10 @@
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.classificaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atendimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atendimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             this.cidadeToolStripMenuItem,
             this.estadoToolStripMenuItem,
             this.toolStripSeparator1,
+            this.mesaToolStripMenuItem,
             this.produtoToolStripMenuItem,
             this.classificaçãoToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Font = new System.Drawing.Font("Tw Cen MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,18 +121,17 @@
             // 
             this.movimentaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.atendimentoToolStripMenuItem,
-            this.mesaToolStripMenuItem,
             this.pedidosToolStripMenuItem});
             this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
             this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(146, 28);
             this.movimentaçãoToolStripMenuItem.Text = "&Movimentação";
             // 
-            // mesaToolStripMenuItem
+            // atendimentoToolStripMenuItem
             // 
-            this.mesaToolStripMenuItem.Name = "mesaToolStripMenuItem";
-            this.mesaToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
-            this.mesaToolStripMenuItem.Text = "&Mesa";
-            this.mesaToolStripMenuItem.Click += new System.EventHandler(this.MesaToolStripMenuItem_Click);
+            this.atendimentoToolStripMenuItem.Name = "atendimentoToolStripMenuItem";
+            this.atendimentoToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
+            this.atendimentoToolStripMenuItem.Text = "&Atendimento";
+            this.atendimentoToolStripMenuItem.Click += new System.EventHandler(this.AtendimentoToolStripMenuItem_Click);
             // 
             // pedidosToolStripMenuItem
             // 
@@ -147,12 +147,12 @@
             this.sairToolStripMenuItem.Text = "&Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
             // 
-            // atendimentoToolStripMenuItem
+            // mesaToolStripMenuItem
             // 
-            this.atendimentoToolStripMenuItem.Name = "atendimentoToolStripMenuItem";
-            this.atendimentoToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
-            this.atendimentoToolStripMenuItem.Text = "&Atendimento";
-            this.atendimentoToolStripMenuItem.Click += new System.EventHandler(this.AtendimentoToolStripMenuItem_Click);
+            this.mesaToolStripMenuItem.Name = "mesaToolStripMenuItem";
+            this.mesaToolStripMenuItem.Size = new System.Drawing.Size(192, 28);
+            this.mesaToolStripMenuItem.Text = "&Mesa";
+            this.mesaToolStripMenuItem.Click += new System.EventHandler(this.MesaToolStripMenuItem_Click_1);
             // 
             // frmMenu
             // 
@@ -193,8 +193,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem classificaçãoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mesaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atendimentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mesaToolStripMenuItem;
     }
 }
