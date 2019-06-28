@@ -10,6 +10,7 @@ namespace PIZZARIA.CAMADAS.MODEL
     {
         public int id { get; set; }
         public bool status { get; set; }
-        public string descricao { get; set; }
+        public int qtdLugares { get; set; }
+        public int numero { get; set; }
     }
 }

@@ -26,7 +26,6 @@ namespace PIZZARIA.CAMADAS.DAL
                 {
                     MODEL.Pedido ped = new MODEL.Pedido();
                     ped.observacao = dados["observacao"].ToString();
-                    ped.idMesa = Convert.ToInt32(dados["mesa_idMesa"].ToString());
                     ped.idAtend = Convert.ToInt32(dados["atend_idAtend"].ToString());
                     ped.idProduto = Convert.ToInt32(dados["produto_idProduto"].ToString());
                     lstPedido.Add(ped);
