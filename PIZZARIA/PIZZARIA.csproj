@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAMADAS\BLL\Cliente.cs" />
+    <Compile Include="CAMADAS\BLL\Pedido.cs" />
     <Compile Include="CAMADAS\BLL\Produto.cs" />
     <Compile Include="CAMADAS\DAL\Atendimento.cs" />
     <Compile Include="CAMADAS\DAL\Cidade.cs" />

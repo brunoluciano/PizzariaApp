@@ -45,7 +45,7 @@ namespace PIZZARIA.CAMADAS.DAL
         public void Inserir(MODEL.Atendimento atend)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "INSERT INTO Atendimento VALUES ('2000-01-01 00:00:00.000', 0, 0, 0, @idCliente)";
+            string sql = "INSERT INTO Atendimento VALUES (' ', 0, 0, 0, @idCliente)";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@idCliente", atend.idCliente);
             try
@@ -61,6 +61,31 @@ namespace PIZZARIA.CAMADAS.DAL
             {
                 conexao.Close();
             }
+        }
+
+        public float Total(int id)
+        {
+            List<MODEL.Atendimento> lstAtend = new List<MODEL.Atendimento>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT sum(preco* quantidade) FROM Pedido INNER JOIN Produto ON produto_idProduto = idProduto INNER JOIN Classificacao ON Classificacao_idClassificacao = idClassificacao WHERE atend_idAtend=@id";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", id);
+            try
+            {
+                conexao.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao listar registros da tabela Atendimento!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            conexao.Open();
+            return cmd.ExecuteNonQuery();
+
         }
     }
 }

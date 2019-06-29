@@ -33,6 +33,8 @@ namespace PIZZARIA.VIEW
             dgvAtendimento.Refresh();
             dgvAtendimento.DataSource = dalAtend.Select();
 
+            lblIdAtend.Text = "0";
+
             limparCampos();
         }
 
@@ -40,7 +42,7 @@ namespace PIZZARIA.VIEW
         {
             cmbClientes.Text = "";
             cmbProduto.Text = "";
-            nudQuantidade.Value = 0;
+            nudQuantidade.Value = 1;
         }
 
         private void CmbClass_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,6 +65,82 @@ namespace PIZZARIA.VIEW
 
             dgvAtendimento.Refresh();
             dgvAtendimento.DataSource = dalAtend.Select();
+
+            grbPedido.Visible = true;
+            cmbClientes.Enabled = false;
+            btnInsAtend.Visible = false;
+        }
+
+        private void DgvAtendimento_DoubleClick(object sender, EventArgs e)
+        {
+            lblIdAtend.Text = dgvAtendimento.SelectedRows[0].Cells["id"].Value.ToString();
+            cmbClientes.SelectedValue = Convert.ToInt32(dgvAtendimento.SelectedRows[0].Cells["idCliente"].Value.ToString());
+
+            CAMADAS.BLL.Pedido bllPed = new CAMADAS.BLL.Pedido();
+            dgvPedidos.Refresh();
+            dgvPedidos.DataSource = bllPed.SelectByFkID(Convert.ToInt32(lblIdAtend.Text));
+
+            grbPedido.Visible = true;
+            cmbClientes.Enabled = false;
+            btnInsAtend.Visible = false;
+        }
+
+        private void BtnInserir_Click(object sender, EventArgs e)
+        {
+            CAMADAS.MODEL.Pedido ped = new CAMADAS.MODEL.Pedido();
+            ped.idAtend = Convert.ToInt32(lblIdAtend.Text);
+            ped.idProduto = Convert.ToInt32(cmbProduto.SelectedValue.ToString());
+            ped.quantidade = Convert.ToInt32(nudQuantidade.Value.ToString());
+            ped.idClass = Convert.ToInt32(cmbClass.SelectedValue.ToString());
+            ped.observacao = txtObs.Text.ToString();
+
+            CAMADAS.DAL.Pedido dalPed = new CAMADAS.DAL.Pedido();
+            dalPed.Inserir(ped);
+            dgvPedidos.Refresh();
+            dgvPedidos.DataSource = dalPed.SelectByFkID(ped.idAtend);
+
+            CAMADAS.DAL.Atendimento dalAtend = new CAMADAS.DAL.Atendimento();
+            txtTotal.Text = dalAtend.Total(ped.idAtend).ToString();
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            CAMADAS.MODEL.Pedido ped = new CAMADAS.MODEL.Pedido();
+            ped.idAtend = Convert.ToInt32(lblIdAtend.Text);
+            ped.id = Convert.ToInt32(lblIdPed.Text);
+            ped.observacao = txtObs.Text.ToString();
+            ped.idProduto = Convert.ToInt32(cmbProduto.SelectedValue);
+            ped.quantidade = Convert.ToInt32(nudQuantidade.Value);
+
+            CAMADAS.DAL.Pedido dalPed = new CAMADAS.DAL.Pedido();
+            dalPed.Update(ped);
+
+            dgvPedidos.Refresh();
+            dgvPedidos.DataSource = dalPed.SelectByFkID(ped.idAtend);
+        }
+
+        private void DgvPedidos_DoubleClick(object sender, EventArgs e)
+        {
+            grbPedido.Visible = true;
+            lblIdPed.Text = dgvPedidos.SelectedRows[0].Cells["id"].Value.ToString();
+            cmbClass.SelectedValue = Convert.ToInt32(dgvPedidos.SelectedRows[0].Cells["idClass"].Value.ToString());
+            cmbProduto.SelectedValue = Convert.ToInt32(dgvPedidos.SelectedRows[0].Cells["idProduto"].Value.ToString());
+            nudQuantidade.Value = Convert.ToInt32(dgvPedidos.SelectedRows[0].Cells["quantidade"].Value.ToString());
+            txtObs.Text = dgvPedidos.SelectedRows[0].Cells["observacao"].Value.ToString();
+        }
+
+        private void BtnRemover_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(lblIdPed.Text);
+            int fk = Convert.ToInt32(lblIdAtend.Text);
+
+            CAMADAS.DAL.Pedido dalPed = new CAMADAS.DAL.Pedido();
+            dalPed.Delete(id);
+
+            dgvPedidos.Refresh();
+            dgvPedidos.DataSource = dalPed.SelectByFkID(fk);
+
+            limparCampos();
         }
     }
 }

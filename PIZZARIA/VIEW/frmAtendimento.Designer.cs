@@ -32,9 +32,9 @@
             this.lblIdAtend = new System.Windows.Forms.Label();
             this.lblCodAtend = new System.Windows.Forms.Label();
             this.btnInsAtend = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPago = new System.Windows.Forms.TextBox();
+            this.txtTroco = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblPago = new System.Windows.Forms.Label();
             this.lblTroco = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -55,6 +55,15 @@
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.dgvAtendimento = new System.Windows.Forms.DataGridView();
+            this.lblIdPed = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classificacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAtend = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -78,9 +87,9 @@
             this.splitContainer1.Panel1.Controls.Add(this.lblIdAtend);
             this.splitContainer1.Panel1.Controls.Add(this.lblCodAtend);
             this.splitContainer1.Panel1.Controls.Add(this.btnInsAtend);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox3);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.txtPago);
+            this.splitContainer1.Panel1.Controls.Add(this.txtTroco);
+            this.splitContainer1.Panel1.Controls.Add(this.txtTotal);
             this.splitContainer1.Panel1.Controls.Add(this.lblPago);
             this.splitContainer1.Panel1.Controls.Add(this.lblTroco);
             this.splitContainer1.Panel1.Controls.Add(this.lblTotal);
@@ -123,33 +132,33 @@
             this.btnInsAtend.UseVisualStyleBackColor = true;
             this.btnInsAtend.Click += new System.EventHandler(this.BtnInsAtend_Click);
             // 
-            // textBox3
+            // txtPago
             // 
-            this.textBox3.Location = new System.Drawing.Point(185, 113);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 16;
+            this.txtPago.Location = new System.Drawing.Point(673, 226);
+            this.txtPago.Name = "txtPago";
+            this.txtPago.Size = new System.Drawing.Size(100, 20);
+            this.txtPago.TabIndex = 16;
             // 
-            // textBox2
+            // txtTroco
             // 
-            this.textBox2.Location = new System.Drawing.Point(348, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 15;
+            this.txtTroco.Location = new System.Drawing.Point(836, 226);
+            this.txtTroco.Name = "txtTroco";
+            this.txtTroco.ReadOnly = true;
+            this.txtTroco.Size = new System.Drawing.Size(100, 20);
+            this.txtTroco.TabIndex = 15;
             // 
-            // textBox1
+            // txtTotal
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 14;
+            this.txtTotal.Location = new System.Drawing.Point(510, 226);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtTotal.TabIndex = 14;
             // 
             // lblPago
             // 
             this.lblPago.AutoSize = true;
-            this.lblPago.Location = new System.Drawing.Point(189, 90);
+            this.lblPago.Location = new System.Drawing.Point(678, 209);
             this.lblPago.Name = "lblPago";
             this.lblPago.Size = new System.Drawing.Size(32, 13);
             this.lblPago.TabIndex = 13;
@@ -158,7 +167,7 @@
             // lblTroco
             // 
             this.lblTroco.AutoSize = true;
-            this.lblTroco.Location = new System.Drawing.Point(346, 90);
+            this.lblTroco.Location = new System.Drawing.Point(835, 209);
             this.lblTroco.Name = "lblTroco";
             this.lblTroco.Size = new System.Drawing.Size(35, 13);
             this.lblTroco.TabIndex = 12;
@@ -167,7 +176,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(23, 90);
+            this.lblTotal.Location = new System.Drawing.Point(512, 209);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(42, 13);
             this.lblTotal.TabIndex = 11;
@@ -185,10 +194,20 @@
             // dgvPedidos
             // 
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.produto,
+            this.classificacao,
+            this.quantidade,
+            this.observacao,
+            this.idAtend,
+            this.idProduto,
+            this.idClass});
             this.dgvPedidos.Location = new System.Drawing.Point(477, 12);
             this.dgvPedidos.Name = "dgvPedidos";
-            this.dgvPedidos.Size = new System.Drawing.Size(484, 208);
+            this.dgvPedidos.Size = new System.Drawing.Size(484, 194);
             this.dgvPedidos.TabIndex = 6;
+            this.dgvPedidos.DoubleClick += new System.EventHandler(this.DgvPedidos_DoubleClick);
             // 
             // cmbClientes
             // 
@@ -210,6 +229,7 @@
             // 
             // grbPedido
             // 
+            this.grbPedido.Controls.Add(this.lblIdPed);
             this.grbPedido.Controls.Add(this.txtObs);
             this.grbPedido.Controls.Add(this.lblObservacao);
             this.grbPedido.Controls.Add(this.lblProduto);
@@ -221,7 +241,7 @@
             this.grbPedido.Controls.Add(this.btnRemover);
             this.grbPedido.Controls.Add(this.btnInserir);
             this.grbPedido.Controls.Add(this.btnEditar);
-            this.grbPedido.Location = new System.Drawing.Point(477, 40);
+            this.grbPedido.Location = new System.Drawing.Point(8, 79);
             this.grbPedido.Name = "grbPedido";
             this.grbPedido.Size = new System.Drawing.Size(463, 157);
             this.grbPedido.TabIndex = 0;
@@ -288,6 +308,11 @@
             this.nudQuantidade.Name = "nudQuantidade";
             this.nudQuantidade.Size = new System.Drawing.Size(88, 20);
             this.nudQuantidade.TabIndex = 4;
+            this.nudQuantidade.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblQuantidade
             // 
@@ -306,6 +331,7 @@
             this.btnRemover.TabIndex = 9;
             this.btnRemover.Text = "&Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.BtnRemover_Click);
             // 
             // btnInserir
             // 
@@ -315,6 +341,7 @@
             this.btnInserir.TabIndex = 7;
             this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
             // 
             // btnEditar
             // 
@@ -324,6 +351,7 @@
             this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "&Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // dgvAtendimento
             // 
@@ -332,6 +360,70 @@
             this.dgvAtendimento.Name = "dgvAtendimento";
             this.dgvAtendimento.Size = new System.Drawing.Size(814, 126);
             this.dgvAtendimento.TabIndex = 0;
+            this.dgvAtendimento.DoubleClick += new System.EventHandler(this.DgvAtendimento_DoubleClick);
+            // 
+            // lblIdPed
+            // 
+            this.lblIdPed.Location = new System.Drawing.Point(290, 89);
+            this.lblIdPed.Name = "lblIdPed";
+            this.lblIdPed.Size = new System.Drawing.Size(100, 23);
+            this.lblIdPed.TabIndex = 15;
+            this.lblIdPed.Visible = false;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Width = 40;
+            // 
+            // produto
+            // 
+            this.produto.DataPropertyName = "produto";
+            this.produto.HeaderText = "PRODUTO";
+            this.produto.Name = "produto";
+            this.produto.Width = 200;
+            // 
+            // classificacao
+            // 
+            this.classificacao.DataPropertyName = "classificacao";
+            this.classificacao.HeaderText = "CLASSIFICAÇÃO";
+            this.classificacao.Name = "classificacao";
+            this.classificacao.Width = 150;
+            // 
+            // quantidade
+            // 
+            this.quantidade.DataPropertyName = "quantidade";
+            this.quantidade.HeaderText = "QUANTIDADE";
+            this.quantidade.Name = "quantidade";
+            // 
+            // observacao
+            // 
+            this.observacao.DataPropertyName = "observacao";
+            this.observacao.HeaderText = "OBSERVAÇÃO";
+            this.observacao.Name = "observacao";
+            this.observacao.Width = 120;
+            // 
+            // idAtend
+            // 
+            this.idAtend.DataPropertyName = "idAtend";
+            this.idAtend.HeaderText = "idAtend";
+            this.idAtend.Name = "idAtend";
+            this.idAtend.Visible = false;
+            // 
+            // idProduto
+            // 
+            this.idProduto.DataPropertyName = "idProduto";
+            this.idProduto.HeaderText = "idProduto";
+            this.idProduto.Name = "idProduto";
+            this.idProduto.Visible = false;
+            // 
+            // idClass
+            // 
+            this.idClass.DataPropertyName = "idClass";
+            this.idClass.HeaderText = "idClass";
+            this.idClass.Name = "idClass";
+            this.idClass.Visible = false;
             // 
             // frmAtendimento
             // 
@@ -377,9 +469,9 @@
         private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.GroupBox grbPedido;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPago;
+        private System.Windows.Forms.TextBox txtTroco;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lblPago;
         private System.Windows.Forms.Label lblTroco;
         private System.Windows.Forms.Label lblTotal;
@@ -387,5 +479,14 @@
         private System.Windows.Forms.Label lblIdAtend;
         private System.Windows.Forms.Label lblCodAtend;
         private System.Windows.Forms.DataGridView dgvAtendimento;
+        private System.Windows.Forms.Label lblIdPed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classificacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAtend;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClass;
     }
 }

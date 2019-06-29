@@ -16,8 +16,11 @@ namespace PIZZARIA.CAMADAS.BLL
 
         public List<MODEL.Produto> SelectByFkID(int fk)
         {
+            if (fk < 0) 
+                fk = 1;
             DAL.Produto dalProd = new DAL.Produto();
             return dalProd.SelectByFkID(fk);
+
         }
     }
 }
