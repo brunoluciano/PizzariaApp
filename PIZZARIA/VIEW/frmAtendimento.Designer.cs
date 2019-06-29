@@ -29,6 +29,19 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.grbPedido = new System.Windows.Forms.GroupBox();
+            this.lblIdPed = new System.Windows.Forms.Label();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.lblObservacao = new System.Windows.Forms.Label();
+            this.lblProduto = new System.Windows.Forms.Label();
+            this.cmbClass = new System.Windows.Forms.ComboBox();
+            this.cmbProduto = new System.Windows.Forms.ComboBox();
+            this.lblClassificacao = new System.Windows.Forms.Label();
+            this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.lblQuantidade = new System.Windows.Forms.Label();
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnInserir = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.lblIdAtend = new System.Windows.Forms.Label();
             this.lblCodAtend = new System.Windows.Forms.Label();
             this.btnInsAtend = new System.Windows.Forms.Button();
@@ -42,35 +55,25 @@
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.grbPedido = new System.Windows.Forms.GroupBox();
-            this.txtObs = new System.Windows.Forms.TextBox();
-            this.lblObservacao = new System.Windows.Forms.Label();
-            this.lblProduto = new System.Windows.Forms.Label();
-            this.cmbClass = new System.Windows.Forms.ComboBox();
-            this.cmbProduto = new System.Windows.Forms.ComboBox();
-            this.lblClassificacao = new System.Windows.Forms.Label();
-            this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
-            this.lblQuantidade = new System.Windows.Forms.Label();
-            this.btnRemover = new System.Windows.Forms.Button();
-            this.btnInserir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.dgvAtendimento = new System.Windows.Forms.DataGridView();
-            this.lblIdPed = new System.Windows.Forms.Label();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classificacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idAtend = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.grbPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtendimento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +86,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnFinalizar);
             this.splitContainer1.Panel1.Controls.Add(this.grbPedido);
             this.splitContainer1.Panel1.Controls.Add(this.lblIdAtend);
             this.splitContainer1.Panel1.Controls.Add(this.lblCodAtend);
@@ -106,129 +110,9 @@
             this.splitContainer1.SplitterDistance = 251;
             this.splitContainer1.TabIndex = 0;
             // 
-            // lblIdAtend
-            // 
-            this.lblIdAtend.Location = new System.Drawing.Point(23, 50);
-            this.lblIdAtend.Name = "lblIdAtend";
-            this.lblIdAtend.Size = new System.Drawing.Size(57, 23);
-            this.lblIdAtend.TabIndex = 19;
-            // 
-            // lblCodAtend
-            // 
-            this.lblCodAtend.AutoSize = true;
-            this.lblCodAtend.Location = new System.Drawing.Point(26, 26);
-            this.lblCodAtend.Name = "lblCodAtend";
-            this.lblCodAtend.Size = new System.Drawing.Size(18, 13);
-            this.lblCodAtend.TabIndex = 18;
-            this.lblCodAtend.Text = "ID";
-            // 
-            // btnInsAtend
-            // 
-            this.btnInsAtend.Location = new System.Drawing.Point(333, 50);
-            this.btnInsAtend.Name = "btnInsAtend";
-            this.btnInsAtend.Size = new System.Drawing.Size(115, 23);
-            this.btnInsAtend.TabIndex = 17;
-            this.btnInsAtend.Text = "&Novo Atendimento";
-            this.btnInsAtend.UseVisualStyleBackColor = true;
-            this.btnInsAtend.Click += new System.EventHandler(this.BtnInsAtend_Click);
-            // 
-            // txtPago
-            // 
-            this.txtPago.Location = new System.Drawing.Point(673, 226);
-            this.txtPago.Name = "txtPago";
-            this.txtPago.Size = new System.Drawing.Size(100, 20);
-            this.txtPago.TabIndex = 16;
-            // 
-            // txtTroco
-            // 
-            this.txtTroco.Location = new System.Drawing.Point(836, 226);
-            this.txtTroco.Name = "txtTroco";
-            this.txtTroco.ReadOnly = true;
-            this.txtTroco.Size = new System.Drawing.Size(100, 20);
-            this.txtTroco.TabIndex = 15;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(510, 226);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(100, 20);
-            this.txtTotal.TabIndex = 14;
-            // 
-            // lblPago
-            // 
-            this.lblPago.AutoSize = true;
-            this.lblPago.Location = new System.Drawing.Point(678, 209);
-            this.lblPago.Name = "lblPago";
-            this.lblPago.Size = new System.Drawing.Size(32, 13);
-            this.lblPago.TabIndex = 13;
-            this.lblPago.Text = "Pago";
-            // 
-            // lblTroco
-            // 
-            this.lblTroco.AutoSize = true;
-            this.lblTroco.Location = new System.Drawing.Point(835, 209);
-            this.lblTroco.Name = "lblTroco";
-            this.lblTroco.Size = new System.Drawing.Size(35, 13);
-            this.lblTroco.TabIndex = 12;
-            this.lblTroco.Text = "Troco";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(512, 209);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(42, 13);
-            this.lblTotal.TabIndex = 11;
-            this.lblTotal.Text = "TOTAL";
-            // 
-            // lblPedidos
-            // 
-            this.lblPedidos.AutoSize = true;
-            this.lblPedidos.Location = new System.Drawing.Point(179, 12);
-            this.lblPedidos.Name = "lblPedidos";
-            this.lblPedidos.Size = new System.Drawing.Size(102, 13);
-            this.lblPedidos.TabIndex = 10;
-            this.lblPedidos.Text = "Registro de Pedidos";
-            // 
-            // dgvPedidos
-            // 
-            this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.produto,
-            this.classificacao,
-            this.quantidade,
-            this.observacao,
-            this.idAtend,
-            this.idProduto,
-            this.idClass});
-            this.dgvPedidos.Location = new System.Drawing.Point(477, 12);
-            this.dgvPedidos.Name = "dgvPedidos";
-            this.dgvPedidos.Size = new System.Drawing.Size(484, 194);
-            this.dgvPedidos.TabIndex = 6;
-            this.dgvPedidos.DoubleClick += new System.EventHandler(this.DgvPedidos_DoubleClick);
-            // 
-            // cmbClientes
-            // 
-            this.cmbClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(92, 52);
-            this.cmbClientes.Name = "cmbClientes";
-            this.cmbClientes.Size = new System.Drawing.Size(229, 21);
-            this.cmbClientes.TabIndex = 1;
-            // 
-            // lblCliente
-            // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(98, 26);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(39, 13);
-            this.lblCliente.TabIndex = 0;
-            this.lblCliente.Text = "Cliente";
-            // 
             // grbPedido
             // 
+            this.grbPedido.Controls.Add(this.btnVoltar);
             this.grbPedido.Controls.Add(this.lblIdPed);
             this.grbPedido.Controls.Add(this.txtObs);
             this.grbPedido.Controls.Add(this.lblObservacao);
@@ -247,6 +131,14 @@
             this.grbPedido.TabIndex = 0;
             this.grbPedido.TabStop = false;
             this.grbPedido.Visible = false;
+            // 
+            // lblIdPed
+            // 
+            this.lblIdPed.Location = new System.Drawing.Point(290, 89);
+            this.lblIdPed.Name = "lblIdPed";
+            this.lblIdPed.Size = new System.Drawing.Size(100, 23);
+            this.lblIdPed.TabIndex = 15;
+            this.lblIdPed.Visible = false;
             // 
             // txtObs
             // 
@@ -353,6 +245,128 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
+            // lblIdAtend
+            // 
+            this.lblIdAtend.Location = new System.Drawing.Point(23, 50);
+            this.lblIdAtend.Name = "lblIdAtend";
+            this.lblIdAtend.Size = new System.Drawing.Size(57, 23);
+            this.lblIdAtend.TabIndex = 19;
+            // 
+            // lblCodAtend
+            // 
+            this.lblCodAtend.AutoSize = true;
+            this.lblCodAtend.Location = new System.Drawing.Point(26, 26);
+            this.lblCodAtend.Name = "lblCodAtend";
+            this.lblCodAtend.Size = new System.Drawing.Size(18, 13);
+            this.lblCodAtend.TabIndex = 18;
+            this.lblCodAtend.Text = "ID";
+            // 
+            // btnInsAtend
+            // 
+            this.btnInsAtend.Location = new System.Drawing.Point(333, 50);
+            this.btnInsAtend.Name = "btnInsAtend";
+            this.btnInsAtend.Size = new System.Drawing.Size(115, 23);
+            this.btnInsAtend.TabIndex = 17;
+            this.btnInsAtend.Text = "&Novo Atendimento";
+            this.btnInsAtend.UseVisualStyleBackColor = true;
+            this.btnInsAtend.Click += new System.EventHandler(this.BtnInsAtend_Click);
+            // 
+            // txtPago
+            // 
+            this.txtPago.Location = new System.Drawing.Point(673, 226);
+            this.txtPago.Name = "txtPago";
+            this.txtPago.Size = new System.Drawing.Size(100, 20);
+            this.txtPago.TabIndex = 16;
+            // 
+            // txtTroco
+            // 
+            this.txtTroco.Location = new System.Drawing.Point(836, 226);
+            this.txtTroco.Name = "txtTroco";
+            this.txtTroco.ReadOnly = true;
+            this.txtTroco.Size = new System.Drawing.Size(100, 20);
+            this.txtTroco.TabIndex = 15;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(510, 226);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtTotal.TabIndex = 14;
+            // 
+            // lblPago
+            // 
+            this.lblPago.AutoSize = true;
+            this.lblPago.Location = new System.Drawing.Point(678, 209);
+            this.lblPago.Name = "lblPago";
+            this.lblPago.Size = new System.Drawing.Size(32, 13);
+            this.lblPago.TabIndex = 13;
+            this.lblPago.Text = "Pago";
+            // 
+            // lblTroco
+            // 
+            this.lblTroco.AutoSize = true;
+            this.lblTroco.Location = new System.Drawing.Point(835, 209);
+            this.lblTroco.Name = "lblTroco";
+            this.lblTroco.Size = new System.Drawing.Size(35, 13);
+            this.lblTroco.TabIndex = 12;
+            this.lblTroco.Text = "Troco";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(512, 209);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(42, 13);
+            this.lblTotal.TabIndex = 11;
+            this.lblTotal.Text = "TOTAL";
+            // 
+            // lblPedidos
+            // 
+            this.lblPedidos.AutoSize = true;
+            this.lblPedidos.Location = new System.Drawing.Point(179, 12);
+            this.lblPedidos.Name = "lblPedidos";
+            this.lblPedidos.Size = new System.Drawing.Size(102, 13);
+            this.lblPedidos.TabIndex = 10;
+            this.lblPedidos.Text = "Registro de Pedidos";
+            // 
+            // dgvPedidos
+            // 
+            this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.produto,
+            this.classificacao,
+            this.preco,
+            this.quantidade,
+            this.observacao,
+            this.idAtend,
+            this.idProduto,
+            this.idClass});
+            this.dgvPedidos.Location = new System.Drawing.Point(477, 12);
+            this.dgvPedidos.Name = "dgvPedidos";
+            this.dgvPedidos.Size = new System.Drawing.Size(484, 194);
+            this.dgvPedidos.TabIndex = 6;
+            this.dgvPedidos.DoubleClick += new System.EventHandler(this.DgvPedidos_DoubleClick);
+            // 
+            // cmbClientes
+            // 
+            this.cmbClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbClientes.FormattingEnabled = true;
+            this.cmbClientes.Location = new System.Drawing.Point(92, 52);
+            this.cmbClientes.Name = "cmbClientes";
+            this.cmbClientes.Size = new System.Drawing.Size(229, 21);
+            this.cmbClientes.TabIndex = 1;
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(98, 26);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(39, 13);
+            this.lblCliente.TabIndex = 0;
+            this.lblCliente.Text = "Cliente";
+            // 
             // dgvAtendimento
             // 
             this.dgvAtendimento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -362,13 +376,15 @@
             this.dgvAtendimento.TabIndex = 0;
             this.dgvAtendimento.DoubleClick += new System.EventHandler(this.DgvAtendimento_DoubleClick);
             // 
-            // lblIdPed
+            // btnFinalizar
             // 
-            this.lblIdPed.Location = new System.Drawing.Point(290, 89);
-            this.lblIdPed.Name = "lblIdPed";
-            this.lblIdPed.Size = new System.Drawing.Size(100, 23);
-            this.lblIdPed.TabIndex = 15;
-            this.lblIdPed.Visible = false;
+            this.btnFinalizar.Location = new System.Drawing.Point(333, 49);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(138, 23);
+            this.btnFinalizar.TabIndex = 20;
+            this.btnFinalizar.Text = "&Finalizar Atendimento";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Visible = false;
             // 
             // id
             // 
@@ -390,6 +406,12 @@
             this.classificacao.HeaderText = "CLASSIFICAÇÃO";
             this.classificacao.Name = "classificacao";
             this.classificacao.Width = 150;
+            // 
+            // preco
+            // 
+            this.preco.DataPropertyName = "preco";
+            this.preco.HeaderText = "PREÇO";
+            this.preco.Name = "preco";
             // 
             // quantidade
             // 
@@ -425,6 +447,16 @@
             this.idClass.Name = "idClass";
             this.idClass.Visible = false;
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(368, 118);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.TabIndex = 16;
+            this.btnVoltar.Text = "&Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
+            // 
             // frmAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,10 +473,10 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             this.grbPedido.ResumeLayout(false);
             this.grbPedido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtendimento)).EndInit();
             this.ResumeLayout(false);
 
@@ -480,13 +512,16 @@
         private System.Windows.Forms.Label lblCodAtend;
         private System.Windows.Forms.DataGridView dgvAtendimento;
         private System.Windows.Forms.Label lblIdPed;
+        private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn classificacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preco;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn idAtend;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn idClass;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

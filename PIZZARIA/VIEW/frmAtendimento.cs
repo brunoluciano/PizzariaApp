@@ -34,14 +34,14 @@ namespace PIZZARIA.VIEW
             dgvAtendimento.DataSource = dalAtend.Select();
 
             lblIdAtend.Text = "0";
-
+            AttTotal();
             limparCampos();
         }
 
         private void limparCampos()
         {
-            cmbClientes.Text = "";
-            cmbProduto.Text = "";
+            cmbClientes.SelectedText = "";
+            cmbProduto.SelectedText = "";
             nudQuantidade.Value = 1;
         }
 
@@ -52,7 +52,6 @@ namespace PIZZARIA.VIEW
             cmbProduto.ValueMember = "id";
             int fk = Convert.ToInt32(cmbClass.SelectedValue);
             cmbProduto.DataSource = bllProd.SelectByFkID(fk);
-
         }
 
         private void BtnInsAtend_Click(object sender, EventArgs e)
@@ -66,9 +65,9 @@ namespace PIZZARIA.VIEW
             dgvAtendimento.Refresh();
             dgvAtendimento.DataSource = dalAtend.Select();
 
-            grbPedido.Visible = true;
-            cmbClientes.Enabled = false;
-            btnInsAtend.Visible = false;
+            Voltar(false);
+
+            AttTotal();
         }
 
         private void DgvAtendimento_DoubleClick(object sender, EventArgs e)
@@ -80,9 +79,21 @@ namespace PIZZARIA.VIEW
             dgvPedidos.Refresh();
             dgvPedidos.DataSource = bllPed.SelectByFkID(Convert.ToInt32(lblIdAtend.Text));
 
-            grbPedido.Visible = true;
-            cmbClientes.Enabled = false;
-            btnInsAtend.Visible = false;
+            Voltar(false);
+
+            AttTotal();
+            limparCampos();
+        }
+
+        private void AttTotal()
+        {
+            CAMADAS.MODEL.Pedido ped = new CAMADAS.MODEL.Pedido();
+            ped.idAtend = Convert.ToInt32(lblIdAtend.Text);
+
+            CAMADAS.DAL.Atendimento dalAtend = new CAMADAS.DAL.Atendimento();
+            float total = 0;
+            total = Convert.ToSingle(dalAtend.Total(ped.idAtend, total).ToString());
+            txtTotal.Text = total.ToString();
         }
 
         private void BtnInserir_Click(object sender, EventArgs e)
@@ -99,8 +110,7 @@ namespace PIZZARIA.VIEW
             dgvPedidos.Refresh();
             dgvPedidos.DataSource = dalPed.SelectByFkID(ped.idAtend);
 
-            CAMADAS.DAL.Atendimento dalAtend = new CAMADAS.DAL.Atendimento();
-            txtTotal.Text = dalAtend.Total(ped.idAtend).ToString();
+            AttTotal();
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -117,6 +127,8 @@ namespace PIZZARIA.VIEW
 
             dgvPedidos.Refresh();
             dgvPedidos.DataSource = dalPed.SelectByFkID(ped.idAtend);
+
+            AttTotal();
         }
 
         private void DgvPedidos_DoubleClick(object sender, EventArgs e)
@@ -140,7 +152,24 @@ namespace PIZZARIA.VIEW
             dgvPedidos.Refresh();
             dgvPedidos.DataSource = dalPed.SelectByFkID(fk);
 
+            AttTotal();
             limparCampos();
+        }
+
+        private void Voltar(bool status)
+        {
+            grbPedido.Visible = !status;
+            cmbClientes.Enabled = status;
+            btnInsAtend.Visible = status;
+            btnFinalizar.Visible = !status;
+        }
+
+        private void BtnVoltar_Click(object sender, EventArgs e)
+        {
+            Voltar(true);
+
+            lblIdAtend.Text = "0";
+            AttTotal();
         }
     }
 }

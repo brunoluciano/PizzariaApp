@@ -16,5 +16,6 @@ namespace PIZZARIA.CAMADAS.MODEL
         public int quantidade { get; set; }
         public int idClass { get; set; }
         public string classificacao { get; set; }
+        public float preco { get; set; }
     }
 }

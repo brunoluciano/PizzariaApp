@@ -14,5 +14,6 @@ namespace PIZZARIA.CAMADAS.MODEL
         public float vlr_pago { get; set; }
         public float troco { get; set; }
         public int idCliente { get; set; }
+        public bool finalizado { get; set; }
     }
 }

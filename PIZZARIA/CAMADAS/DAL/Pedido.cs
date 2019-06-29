@@ -33,6 +33,7 @@ namespace PIZZARIA.CAMADAS.DAL
                     ped.idClass = Convert.ToInt32(dados["idClassificacao"]);
                     ped.classificacao = dados["nome"].ToString();
                     ped.quantidade = Convert.ToInt32(dados["quantidade"].ToString());
+                    ped.preco = Convert.ToSingle(dados["preco"].ToString());
                     lstPedido.Add(ped);
                 }
             }
@@ -66,6 +67,7 @@ namespace PIZZARIA.CAMADAS.DAL
                     ped.idClass = Convert.ToInt32(dados["idClassificacao"]);
                     ped.classificacao = dados["nome"].ToString();
                     ped.quantidade = Convert.ToInt32(dados["quantidade"].ToString());
+                    ped.preco = Convert.ToSingle(dados["preco"].ToString());
                     lstPedido.Add(ped);
                 }
             }

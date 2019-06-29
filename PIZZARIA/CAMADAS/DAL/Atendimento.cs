@@ -16,7 +16,7 @@ namespace PIZZARIA.CAMADAS.DAL
         {
             List<MODEL.Atendimento> lstAtend = new List<MODEL.Atendimento>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "SELECT * FROM Atendimento";
+            string sql = "SELECT * FROM Atendimento WHERE finalizado=0";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             try
             {
@@ -63,17 +63,35 @@ namespace PIZZARIA.CAMADAS.DAL
             }
         }
 
-        public float Total(int id)
+        public void Update(MODEL.Atendimento atend)
         {
             List<MODEL.Atendimento> lstAtend = new List<MODEL.Atendimento>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "SELECT sum(preco* quantidade) FROM Pedido INNER JOIN Produto ON produto_idProduto = idProduto INNER JOIN Classificacao ON Classificacao_idClassificacao = idClassificacao WHERE atend_idAtend=@id";
+            string sql = "UPDATE Atendimento SET h_pagamento=@h_pg, vlr_total=@total, vlr_pago=@pg, troco=@troco, finalizado=@finalizado WHERE idAtendimento=@id";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", atend.id);
+            cmd.Parameters.AddWithValue("@h_pg", atend.h_pagamento);
+            cmd.Parameters.AddWithValue("@total", atend.vlr_total);
+            cmd.Parameters.AddWithValue("@pg", atend.vlr_pago);
+            cmd.Parameters.AddWithValue("@troco", atend.troco);
+            cmd.Parameters.AddWithValue("@finalizado", atend.finalizado);
+            
+
+        }
+
+        public float Total(int id, float total)
+        {
+            List<MODEL.Atendimento> lstAtend = new List<MODEL.Atendimento>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "SELECT sum(preco*quantidade) FROM Pedido INNER JOIN Produto ON produto_idProduto = idProduto INNER JOIN Classificacao ON Classificacao_idClassificacao = idClassificacao WHERE atend_idAtend=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", id);
+
             try
             {
                 conexao.Open();
                 cmd.ExecuteNonQuery();
+                total = Convert.ToSingle(cmd.ExecuteScalar());
             }
             catch
             {
@@ -83,9 +101,7 @@ namespace PIZZARIA.CAMADAS.DAL
             {
                 conexao.Close();
             }
-            conexao.Open();
-            return cmd.ExecuteNonQuery();
-
+            return total;
         }
     }
 }
